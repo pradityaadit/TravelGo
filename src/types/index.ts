@@ -4,7 +4,7 @@ export interface User {
   password: string;
   name: string;
   phone: string;
-  role: 'user' | 'admin';
+  role: "user" | "admin";
   createdAt: string;
 }
 
@@ -18,7 +18,7 @@ export interface Schedule {
   availableSeats: number;
   totalSeats: number;
   vehicleId: string;
-  status: 'active' | 'inactive';
+  status: "active" | "inactive";
 }
 
 export interface Vehicle {
@@ -39,7 +39,13 @@ export interface Booking {
   numberOfSeats: number;
   totalPrice: number;
   bookingCode: string;
-  status: 'pending' | 'paid' | 'completed' | 'cancelled';
+  status:
+    | "pending"
+    | "awaiting_verification"
+    | "paid"
+    | "completed"
+    | "cancelled";
+  paymentProof?: string; // base64 image data or URL
   createdAt: string;
 }
 
